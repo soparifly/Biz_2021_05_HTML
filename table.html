@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table 연습</title>
+</head>
+<body>
+    <h1> Table 연습 </h1>
+    <style>
+        h1 {
+            background-color: salmon;
+            color: sienna;
+            font-weight: bold;
+            padding: 30px; /*내부의 여백*/
+            margin: 0px; /*주변의 여백*/
+            text-align: center;
+        }
+        table{
+            /*
+            table tag 보이는 화면의 전체폭(width) 의 70% 만큼의 크기로 설정하라
+                        (반응형웹 : 화면의 크기에따라 표의 크기가 변경됨 )
+            */
+            /* width 를 퍼센트로 지정함
+            */
+            width: 70%;
+
+            /*크기를 픽셀로 지정하면 화면의 크기에 관계없이 
+            항상 일정한 크기를 갖게된다 
+            표의 크기가 고정되고 화면의 크기에 상관없이 일정한 표크기를 갖고 화면의 크기가 달라지면 표가 잘린다*/
+           /* width: 700px; */
+           width: 80%;
+           /*
+           margin , padding 
+           값을 1개만 설정 : top, right, bottom, left가 같은값
+           값을 2개 설정 : top-bottom, right-left가 같은값
+           값을 4개 설정 : top -> right -> bottom -> left 순서로 지정
+           ex) margin-top:5px;
+           margin-bottom:2px;
+            margin-left:2px;
+            margin-right:10px;
+            ==> 동일 margin:5px,10px,2px,2px;
+           */
+           margin: 10px auto; /*auto : margin을 설정할때 값 auto 로 지정하면 박스가 화면중앙에 위치하게된다 */
+           background-color: #aaa;
+           /*table의 cell간의 여백 제거*/
+           border-collapse: collapse;
+           border:1px solid burlywood;
+        }
+        /*
+        콤마(,) 로 여러 Object 설정하기
+        td tag와 th tag에 공통속성 (style)을 지정하자
+        */
+           td, th {
+               border:1px solid green;
+               padding: 5;
+            
+           }
+           /* CSS 3 속성 */
+           /* tr tag list 들을 지정하는 style*/
+           /*tr:nth-child(2){
+               background-color: blue;
+
+           }
+            두번째줄에 파란줄생김*/
+
+           /* CSS 3 속성 (의 가상클래스 속성)*/
+           /* tr 에 내장된 tag list 들을 지정하는 style*/
+           /*even <--짝수인 행만*/
+           /* tr tag list들 중에서 짝수 row에 바탕색을 지정 */
+           tr:nth-child(even){
+               background-color: #ccc;
+
+           }
+        
+    </style>
+    <!--
+        table tag :표 형식의 UI Layout을 만드는 DOM요소
+        table row, column으로 구성된 layout
+        HTML에서는 row, data(division)으로 구성을 한다
+        row가 3개 이고 row가 포함하는 data가 5개인 표를
+        layout 설정
+    -->
+    <table>
+        <thead>
+        <!--th: td의 헤더를 보여줌-->
+        <tr><th>학번</th>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>주소</th>
+        <th>학과</th>
+        <th>학년</th>
+        <th>부전공</th></tr>
+        <!--<table border = "1">-->
+        <!--tr*3-->
+        <!-- 이렇게 작성하면 표내부에 서로의 크기가 안맞아서 빈칸이생긴다-->
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <!-- 빈칸을 넣어서 가장큰 표의 크기를 맞춰서 꾸밀수있다-->
+            <td colspan="3">3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>가</td>
+            <td colspan="4">나</td>
+            <td>다</td>
+            <td>라</td>
+        </tr>
+        <tr>
+            <td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>e</td>
+        <td>f</td>
+        <td>g</td>
+    </tr>
+</tr>
+<tr>
+    <td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+<td>g</td>
+</tr>        </tr>
+<tr>
+    <td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+<td>g</td>
+</tr>        </tr>
+<tr>
+    <td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+<td>g</td>
+</tr>        </tr>
+<tr>
+    <td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+<td>g</td>
+</tr>        </tr>
+<tr>
+    <td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+<td>g</td>
+</tr>        </tr>
+<tr>
+    <td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+<td>g</td>
+</tr>        </tr>
+<tr>
+    <td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+<td>g</td>
+</tr>
+
+
+</tbody>
+        </table>
+
+
+
+    </table>
+
+</body>
+</html>
