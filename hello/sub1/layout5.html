@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      /*
+        float속성
+        원래는 이미좌 text의 조합을 위해서 사용하는 속성 이었다
+        어떤 경로로인하여 
+        block형 tag를 한 라인에 배치하기 위하여 변형적으로 사용했었다
+
+        상당히 많은 이슈가 있어서 최근에는 사용하지않는다
+        */
+
+      * {
+        box-sizing: border-box;
+      }
+      div {
+        width: 100px;
+        border: 1px solid green;
+        margin: 5px;
+        padding: 2rem;
+        float: left;
+      }
+      /*d1은 d2위에 떠있다고볼수있다*/
+      div#d1 {
+        float: left;
+        background-color: yellow;
+      }
+      div#d2 {
+        float: left;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1">1</div>
+    <div id="d2">2</div>
+    <div id="d3">3</div>
+    <div id="d4">4</div>
+    <div id="d5">5</div>
+  </body>
+</html>

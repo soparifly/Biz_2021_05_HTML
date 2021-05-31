@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded",function(eve){
+
+            document.querySelector("div#d_sub_1").addEventListener("click",function(ev){
+            // alert("나는 파란박스입니다")
+            let text = ev.target.textContent
+            // let message = String.format("나는 %s 입니다", text)
+            alert("나는" + text + "입니다")
+        })
+        })
+            
+        </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#d_main {
+            width : 80%;
+            margin : 0px auto;
+            background-color: indianred;
+            padding :10px;
+        }
+        div#d_sub_1 {
+            width: 80%;
+            margin : 30px auto;
+            background-color: lightsalmon;
+            padding: 10px;
+
+
+        }
+        div#d_sub_1 p{
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+            background-color: brown;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="d_main">
+            <div id="d_sub_1">
+                <p>대한민국</p>
+                <p>우리나라</p>
+                <p>Republic of Korea</p>
+                <ul>
+                    <li>가</li>
+                    <li>나</li>
+                    <li>다</li>
+
+                </ul>
+                </div>
+        </div>
+    </div>
+</body>
+
+</html>

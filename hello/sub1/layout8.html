@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      table {
+        border: 1px solid green;
+        /*
+        table clloapse 를 separate로 설정하고
+        spacin을 설정하면 표의 cell과 cell간격을 설정할수 있다.
+        */
+        border-collapse: separate;
+        border-spacing: 5px;
+        margin: 60%;
+      }
+      th,
+      td {
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <colgroup>
+        <col width="15%" />
+        <col width="15%" />
+        <col width="55%" />
+        <col width="15%" />
+      </colgroup>
+      <caption>
+        학생정보
+      </caption>
+      <thead>
+        <tr>
+          <th scope="row">학번</td>
+          <th scope="row">이름</td>
+          <th scope="row">주소</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>홍길동</td>
+          <td>대한민국</td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>홍길동</td>
+          <td>대한민국</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>웹 접근성과 table</h3>
+    <p>table thead 영역의 tag에 scope 지정</p>
+    <p>score="col",score="row"를 지정할 수 있다</p>
+    <p>score="col",왼쪽에서 아래로 읽기
+        score="row",왼쪽에서 오른쪽으로 읽기
+    </p>
+  </body>
+</html>

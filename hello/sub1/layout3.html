@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      section#main_sec article {
+        display: inline-block;
+        border: 1px solid green;
+        padding: 2rem;
+        margin: 5px;
+        width: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>본문만들기</h1>
+      <p>section article을 사용한 본문 만들기</p>
+    </header>
+    <section id="main_sec">
+      <article>공지사항</article>
+      <article>자유게시판</article>
+      <article>
+        <img src="../2021.jpg" width="300px" />
+        <img src="../2022.jpg" alt="2022이미지" width="300px" />
+      </article>
+      <p>
+        img tag 사용하여 이미즐 표현할때는 반드시 alt 속성을 지정하자 alt속성은
+        화면 읽기 소프트웨어에서 감지하여 이미제 대한 내용을 읽어준다 시각
+        장애인을 위한 웹 접근성 표준 지침에 필수 요소로 지정되어있다.
+      </p>
+    </section>
+  </body>
+</html>
