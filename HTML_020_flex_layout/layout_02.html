@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex box layout</title>
+    <style>
+      /*div 들을 포함하는  container를 flex로 선언했다*/
+      div.container {
+        display: flex;
+        border: 1px solid green;
+        padding: 10px;
+      }
+      /*flex container에 포함된 요소들 
+      요소들을 감싸는 container의 dispaly:flex로 선언하는 순간 
+      요소들은 flex-item으로 변형된다
+      flex-intem은 기본성질이 inline-block이 된다 
+        */
+      div.container div {
+        /*flex-itme들의 배열을 1:1:1로 설정하라는 뜻*/
+        flex: 1;
+        border: 1px solid gold;
+        margin: 5px;
+      }
+      div.container div:nth-child(2) {
+        flex: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>숫자</div>
+      <div>숫자</div>
+      <div>숫자</div>
+      <div>숫자</div>
+      <div>숫자</div>
+    </div>
+  </body>
+</html>
