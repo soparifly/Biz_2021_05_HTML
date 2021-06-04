@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="../reset.css" ref="stylesheet" />
+    <style>
+      div {
+        border: 1px solid goldenrod;
+        font-size: 30px;
+        text-align: center;
+      }
+      /*
+                Container box에 dispaly를 flex로 선언하면 내부의
+                box들은 flex-item 설정된다
+          - flex-diretion: row
+          - 주축은 시작선 왼쪽에서 오른쪽
+          - 주축에서는 flex-item이 늘어나지는 않지만 container 크기에 따라 줄어들어 배치된다
+          - 주축방향이 무한이 작아져도 flex-item이 자동으로 다음줄로 이동하지않는다
+          - flex-wrap :nowrap
+          - flex-basis 가 auto
+          - 가로방향(row) :width
+          - 세로방향(column) : height
+                */
+      div.container {
+        display: flex;
+        border: 1px solid green;
+        padding: 5px;
+        height: 200px;
+      }
+      /* flex item 의 width 값이 설정되어있으면 container가 커질때는 flex-item  width는 미리 설정된 값 보다는 커지지않는다
+
+      하지만 컨테이너가 작아질때는 flex-item width는 미리 설정된 값보다 비율적으로 작아져서
+
+      container범위를 벗어나지 않게 설정된다 */
+
+      /* flex-basis는 기본값이 auto이다 */
+      /* auto인 상태는 width 값이 미리 설정되면 그값으로 px값을 설정한는 것과 같다 */
+      /* item의 width를 px값등으로 고정하고자 할때는 width를 사용하지 않고 flex-basis에 원하는 값을 지정하는것이 좋다 */
+      div.item {
+        flex-basis: 100px;
+        /* flex-grow: 를 1이상의 값으로 설정하면 width설정이 무시되는 것 처럼 보이지만, 실제 동작은 container 크기에따라 width 의 크기만큼
+              자동 배분되어 flex-item의 width가 정해진다;
+              flex-basis: 에 설정된 width값보다 커질수 있다; */
+        /* flex:1이라고 설정하면
+              grow = 1 이고 basis는 무시되는 설정이 된다 */
+        flex-shrink: 1;
+        /* flex-shrink: 를 1보다 큰 값으로 설정하면 flex-item의 width가 무한히 작아지는 것처럼 보이지만, 실제동작은 flex-basis로 설정한 값보다
+              작아지게 하는 동작을한다; */
+        flex-grow: 1;
+        height: 100px;
+        margin: 5px;
+      }
+      /* item1과 item2의 basis가 200px로 같다
+            grow는 1:2의 비율이다
+            container가 무한히 카져서 item을 모두 충번히 채울만 하면
+            item크기도 커져야 하지만 이때 item1과 item2 의 커지는 비율이 1:2로 된다 .  */
+      div.item:nth-child(1) {
+        flex-grow: 1;
+        /* flex-shrink: ; */
+        /* flex-item작아질때의 설정
+              flex-item작아질때 어떤 비율로 작아질것인가
+              item3=1, item4=2
+              item3 10px 줄어들때 item 20px만큼씩 줄어들기
+              최소로 작아진 화면에서는
+              item3 와 item4가 마치 2:1 의 비율 인것처럼 보인다 */
+        flex-shrink: 1;
+        flex-basis: 200px;
+      }
+      div.item:nth-child(2) {
+        flex-grow: 2;
+        flex-shrink: 2;
+        flex-basis: 200px;
+      }
+      div.item:nth-child(3) {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 200px;
+      }
+      div.item:nth-child(4) {
+        flex-grow: 1;
+        flex-shrink: 2;
+        flex-basis: 200px;
+      }
+      div.item:nth-child(5) {
+        flex: 1 1 200px;
+      }
+      div.item:nth-child(6) {
+        flex: 2 2 200px;
+      }
+      div.item:nth-child(7) {
+        flex: 1 0 auto;
+      }
+      /* flex : initial : 0 1 auto
+      flex : auto 1 1 auto
+      flex : none 0 0 auto 
+                                glow:shink,basis 지정하지 않겠다
+      /* flex : 정수 값 : 정수 값  => 0 : 0 */
+      /* flex-wrap: nowrap으로 지정했을때
+      설정되는 값이다
+      wrap으로 지정하면 상황에 따라 다르게 적용된다
+      두줄 이상의 박스를 배열할수도 있다는 뜻이다 */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+    </div>
+  </body>
+</html>
