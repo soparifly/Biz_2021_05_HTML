@@ -1,0 +1,31 @@
+nav#main_nav {
+  position: fixed;
+  background-color: green;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+nav#main_nav h1 {
+  font-size: 40px;
+  color: ghostwhite;
+  font-weight: 900;
+}
+nav#main_nav ul {
+  /* contanmier를 flex로 하고 child의 margin-left를 auto로 설정하면 flex box내에서 오른쪽 정렬이된다 */
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+  color: ghostwhite;
+}
+nav#main_nav li {
+  padding: 22px 15px 20px 15px;
+  cursor: pointer;
+}
+nav#main_nav li.active {
+  border-bottom: 3px solid white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+nav#main_nav li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}

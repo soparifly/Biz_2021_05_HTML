@@ -1,3 +1,4 @@
+/* 코드는 이아래 붙여넣으시면됩니다  Ctrl + a / +c  / +v */
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -15,40 +16,49 @@
       body {
         height: 100%;
       }
-      div.logo{
-        border: none;
-        margin:  3px;
-        padding: 8%;
-        justify-content: center;
-        display: flex;
-        position: fixed;
-        align-items: center;
-        top: 0;
-        left: 0;
-        right: 0;
-      }
+      
       div.div1 {
         background-color: whitesmoke;
       }
-      header{
-        /* height: 75px; */
-        padding: 25%;
-        color: whitesmoke;
-        font-weight: bold;
-        justify-content: center;
-        display: flex;
+
+      div.logo img {
+        width: 100px;
+        height: 80px;
+        object-fit: fill;
+        padding: 5px;
+        margin: 5px;
+      }
+      
+      header {
         position: fixed;
-        align-items: center;
         top: 0;
         left: 0;
         right: 0;
+        
+        height: 75px;
+        padding: 1rem;
+        color: white;
+        background: rgb(245, 243, 237);
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
+
+      nav ul li {
+        float: left;
+        list-style: none;
+        font-size: 20px;
+        color: rgb(3, 102, 53);
+        margin: 25px;
+      }
+
       h1{
-        color: green;
+        color: rgb(3, 102, 53);
         text-align: center;
         text-shadow: 1px 1px 1px darkgray;
         height: 100%;
-        font-size: 60px;
+        font-size: 30px;
     
       }
       h1 p.p1{
@@ -69,19 +79,103 @@
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
+
+    body {
+      padding-top: 75px;
+    }
+
+    .menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-width: 0;
+  transition: 0.5s ease;
+  z-index: 1;
+  background-color: #eee;
+}
+
+.burger-icon {
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  padding: 8px 0;
+  top: 4px;
+  right: 4px;
+  user-select: none;
+  width: auto;
+  margin: 0;
+}
+
+.burger-icon .burger-sticks {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.burger-icon .burger-sticks:before,
+.burger-icon .burger-sticks:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.burger-icon .burger-sticks:before {
+  top: 5px;
+}
+
+.burger-icon .burger-sticks:after {
+  top: -5px;
+}
+
+.burger-check {
+  display: none;
+}
+
+.burger-check:checked~.menu {
+  max-width: 200px;
+}
+
+.burger-check:checked~.burger-icon .burger-sticks {
+  background: transparent;
+}
+
+.burger-check:checked~.burger-icon .burger-sticks:before {
+  transform: rotate(-45deg);
+}
+
+.burger-check:checked~.burger-icon .burger-sticks:after {
+  transform: rotate(45deg);
+}
+
+.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:before,
+.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:after {
+  top: 0;
+}
     </style>
   </head>
   <body>
-    <div class="logo"><img src="img/Starbucks-Logo.png" width="25%" height="25%"></div>
     <header>
-    <h1><p class="p1">CUSTOM</p>
-        <p class="p2">ORDER</p></h1>
+      <div class="logo"><img src="../STARBUCKS/Starbucks-Logo.png" ></div>
+      <h1>CUSTOM ORDER</h1>
       <div class="div1"></div>
       <nav>
         <ul>
+          <li>전체메뉴</li>
+          <li>내 메뉴</li>
+          <li>게시판</li>
         </ul>
       </nav>
     </header>
+    click on menu at top right ==>
     <section>
         <div>
             <p>갤러리가 들어갑니다</p>
