@@ -34,18 +34,6 @@ section#contents article {
   background-size: cover;
   background-attachment: fixed;
 }
-
-@media screen and (max-width: 1000px) {
-  section#contents {
-    font-size: 40px;
-    font-weight: 700;
-  }
-  @media screen and (max-width: 800px) {
-    section#contents {
-      font-size: 30px;
-    }
-}
-
 article#art1 {
   background: url("../img/images\ \(1\).jpg") no-repeat;
   background-image: url("../img/images\ \(1\).jpg");
@@ -62,4 +50,14 @@ article#art4 {
 }
 article#art5 {
   background: url("../img/images\ \(5\).jpg") no-repeat;
+}
+@media screen and (max-width: 1000px) {
+  section#contents {
+    font-size: 40px;
+    font-weight: 700;
+  }
+@media screen and (max-width: 800px) {
+    section#contents {
+      font-size: 30px;
+    }
 }
