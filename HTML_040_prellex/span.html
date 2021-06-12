@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Span Tag</title>
+        <style>
+            span{
+                font-weight: bold;
+                border: 1px solid green;
+            }
+            span.box{
+                display: inline-block;
+                width: 200px;
+                border:1px solid green
+            }
+            span.hidden{
+                visibility: hidden;
+                width:0vh;
+            }
+
+            p.visi:hover span.hidden {
+                visibility: visible;
+                width: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 어떤 문장내에서 일부의 text의 style을 지정하고자할때 주로 span 을 사용한다  -->
+        <!-- span tag자체로는 아무런 효과나 모양이 보이지 않는다 -->
+        <p>Republic of <span class="box">KOREA</span>VIVA</p>
+        <p class="visi">Republic of <span class="box hidden">KOREA</span>VIVA</p>
+        <p>Republic of <span>KOREA</span></p>
+        <!-- b Tag Bold체 로  변경 - 잘안씀 -->
+        <p>Republic of <b>B KOREA</span></p>
+        <p>Republic of <strong> STRONG KOREA</span></p>
+        <p>Republic of <em>EM KOREA</span></p>
+        <p>Republic of <del>DEL KOREA</span></p>
+            <p>Republic of <small>SMALL KOREA</span></p>
+            <p>Republic of <ins>INS KOREA</span></p>
+            <p>Republic of <span>KOREA sup<sup>s</sup></span></p>
+            <p>Republic of <span>KOREA sub<sub>s</sub></span></p>
+            <p>Republic of <mark>KOREA mark</mark></p>
+
+    </body>
+</html>

@@ -2,7 +2,12 @@ nav#dot_nav {
   position: fixed;
   /* box의 오른쪽 끝을 화면의 오른쪽부터 40px만큼 이격함 (떨어지게 배치) */
   right: 40px;
+  /* nav box를 position을 fixed로 설정하고
+  top: 50% 로 지정하면 box  의 상단 부분이 view port의 위에서 50% 위치에 고정
+  box height만큼 아래쪽으로 치우치는 모양이된다  */
   top: 50%;
+  /* translateY : y축으로 자신의 높이 50%만큼 이동하라는 뜻 */
+  transform: translateY(-50%);
 }
 
 nav#dot_nav li {
@@ -15,13 +20,28 @@ nav#dot_nav li {
   position: relative;
   margin: 16px 7px;
   background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 1px black;
   border-radius: 50%;
 }
 
 nav#dot_nav li span {
   color: white;
   /* 투명도 (0) */
+  /* Content색상의 투명도를 설정
+   0~ 1까지 소숫점단위로  */
   opacity: 0;
   /* relative로 설정된 box에 대하여 절대위치 */
   position: absolute;
+  /* 오른쪽에서 35px만큼 떨어진위치 */
+  right: 35px;
+  top: -5;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 7px 10px 5px 10px;
+  border-radius: 7px;
+  transition: all 1s ease;
+  -webkit-transition: all 0.3s ease;
+}
+nav#dot_nav li.active span {
+  opacity: 1;
+  right: 25px;
 }

@@ -51,13 +51,4 @@ article#art4 {
 article#art5 {
   background: url("../img/images\ \(5\).jpg") no-repeat;
 }
-@media screen and (max-width: 1000px) {
-  section#contents {
-    font-size: 40px;
-    font-weight: 700;
-  }
-@media screen and (max-width: 800px) {
-    section#contents {
-      font-size: 30px;
-    }
-}
+
