@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../../STARBUCKS-김성훈"
+	},
+	{
+		"path": "../.."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "HTML"
+  }
+}

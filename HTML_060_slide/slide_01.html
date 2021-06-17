@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      /* 이 페이지에서 사용할 애니메이션을 선언 */
+      @keyframes myslide {
+        /* 1% 마다 5 px씩 서서히 움직이는 애니메이션을 만들겠다는 의미 0 ~ -500 을 100%로 만듬 */
+        /* 키프레임 시작점 */
+        0% {
+          /* 현재모양에서 */
+          transform: translateX(0);
+        }
+        /* 키프레임 종료점*/
+        100% {
+          /* 왼쪽 방향으로 Tag를 이동하라는뜻 */
+          /* 500px짜리 이미지가 다섯개있으니 곱해서 : calc ? px * (N)개 */
+          transform: translateX(calc(-500px * 5));
+        }
+      }
+
+      div.main {
+        width: 500px;
+        height: 500px;
+        border: 1px solid green;
+        margin: 20px auto;
+      }
+      div.main div.mask {
+        border: 1px solid red;
+        height: 500px;
+        /* 감싸고 있는 이미지들이 화면에서 넘치는 현상이 발생했는데 
+        이박스만큼만 보여주고 나머지는 모두 보이지 않도록해라 */
+        overflow: hidden;
+      }
+
+      div.main div.images {
+        border: 1px solid red;
+        width: 500px;
+        display: flex;
+        /* 애니메이션을 넣는다 위에서 지정한 애니메이션 변수이름에따라 10초동안 옆으로 /무한반복/infinite  */
+        animation: myslide 20s linear infinite;
+      }
+
+      div.main div.images img {
+        width: 500px;
+        height: 500px;
+        /* border: 1px solid red; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 이미지 슬라이드를 할때는 한번보여주고 다음 한바뀌를 돌이미지가 연결되야하기때문에 두묶음의 이미지가 필요하다 -->
+
+    <div class="main">
+      <div class="mask">
+        <div class="images">
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

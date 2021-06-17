@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 슬라이드</title>
+    <style>
+      section {
+        width: 500px;
+        height: 500px;
+        margin: 30px auto;
+        position: relative;
+      }
+      div.images {
+        display: flex;
+        transition: 1s;
+      }
+      div.images img {
+        width: 500px;
+        height: 500px;
+      }
+      /*    실제 전체이미지는 여러개의 이미지가 나열되어 
+상당히  width가 큰상태이다
+이미지 리스트 중에서 mask box만큼만 보여주도록 하기위하여 
+mask box의 overflow를 hedden을 하였다
+
+실제 보여지는 1개의 이미지의 크기는 
+mask boxdml width, height라고 봐도된다  */
+
+      div.mask {
+        width: 500px;
+        height: 500px;
+        /* overflow: hidden; */
+      }
+
+      article.nav {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+
+        /* 세로방향 중앙에 item을 위치하고자 할때 */
+        /* 절대좌표 위치를 parents의 50% 만큼 아래로 위치하고 */
+        top: 50%;
+        /* 자기 자신의 크기의 50%만큼 후진 */
+        transform: translateY(-50%);
+
+        font-size: 50px;
+        font-weight: 800;
+        display: flex;
+        opacity: 0;
+        transition: opacity 0.5s;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+      }
+      article.nav div:last-child {
+        margin-left: auto;
+      }
+
+      article.nav:hover {
+        opacity: 1;
+      }
+      article.nav div:hover {
+        color: blue;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const image = document.querySelector("div.images");
+        // 이미지 개개별로 모두가져오기
+        //images는 img tag들 정보를 담는 배열이 생성
+        const images = document.querySelectorAll("div.images img");
+        const IMAGE_WIDTH = 500;
+        let position = 0;
+
+        const prev = () => {
+          //맨 마지막 이미지가 맨 오른쪽 끝 이미지인지 위치 값을 검사하여
+          // IMAGE_WIDTH * IMAGE_COUNT는 전체이미지의 가로폭이된다
+          // IMAGE_WIDTH * (IMAGE COUNT -1) 제일 마지막 이미지의 왼쪽라인 좌표가 된다
+          //  그 좌표에 -1을 곱하여 현재 position의 값과 비교해본다
+
+          if (position <= IMAGE_WIDTH * ((IMAGE_COUNT - 1) * -1)) {
+            //이미지(mask box)의 width만큼 position 값을//감소시키기
+            position = IMAGE_WIDTH;
+          }
+          position += IMAGE_WIDTH * -1;
+          // console.log(position);
+          // script 에서는  camel case로 사용한다
+          // 중간에 - 가 있는 태그는 -를 빼고 다음 글자를 대문자로 표현한다
+
+          // images.style.marginLeft = position + "px";
+
+          // margin-left를 이동하는 것 보다
+          // CSS3에서는 transform 을 사용하자
+
+          // Image.style.transform ="translateX(" + position + "px)";
+
+          Image.style.transform = "translateX(${position}px)";
+          // js에서는 문자열 + 문자열.. 등의 연산대신에
+          //  Backtit을 사용하여 문자열 완성 연산을 수행하자
+        }; //end prev
+
+        const next = () => {
+          if (position <= 0) {
+            position = IMAGE_WIDTH * (IMAGE_WIDTH - 1) * -1;
+          }
+          position += IMAGE_WIDTH;
+          image.style.transform = "translateX(${position}px)";
+        };
+        document.querySelector("article.nav").addEventListener("click", (e) => {
+          let text = e.target.innerHTML;
+          if (text === "<" || text === "$lt;") {
+            prev();
+          } else if (text === ">" || text === "&gt;") {
+            next();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <section>
+      <div class="mask">
+        <div class="images">
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+          <img src="img1.png" />
+        </div>
+      </div>
+      <article class="nav">
+        <div>&lt;</div>
+        <div>&gt;</div>
+      </article>
+    </section>
+  </body>
+</html>

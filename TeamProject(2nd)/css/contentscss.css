@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@keyframes myslide{
+	0%{
+	transform: translateX(0);
+	
+	}
+	100%{
+	transform: translateX(calc(-500px*5));
+	
+	}
+}
+div.main{
+	width:50%;
+	height: 280px;
+	margin: 20px auto;
+	border-radius: 20px;
+	}
+	
+	div.main div.mask{
+	height: 300px;
+	overflow:hidden;
+	}
+	div.main div.images{
+	width:300px;
+	display:flex;
+	animation: myslide 20s linear infinite;
+	}
+	div.main div.images img{
+	width:500px;
+	height: 300px;
+	
+	}
+}
